@@ -67,10 +67,47 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        blob: {
+          "0%": {
+            transform: "translate(0px, 0px) scale(1)",
+          },
+          "33%": {
+            transform: "translate(30px, -50px) scale(1.1)",
+          },
+          "66%": {
+            transform: "translate(-20px, 20px) scale(0.9)",
+          },
+          "100%": {
+            transform: "translate(0px, 0px) scale(1)",
+          },
+        },
+        "pulse-slow": {
+          "0%, 100%": {
+            transform: "scale(1)",
+            opacity: "0.6",
+          },
+          "50%": {
+            transform: "scale(1.1)",
+            opacity: "0.8",
+          },
+        },
+        "pulse-fast": {
+          "0%, 100%": {
+            transform: "scale(1)",
+            opacity: "0.7",
+          },
+          "50%": {
+            transform: "scale(1.05)",
+            opacity: "0.9",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        blob: "blob 7s infinite cubic-bezier(0.6, 0.01, 0.27, 0.95)",
+        "pulse-slow": "pulse-slow 4s infinite ease-in-out",
+        "pulse-fast": "pulse-fast 2s infinite ease-in-out",
       },
     },
   },
@@ -78,4 +115,3 @@ const config = {
 } satisfies Config;
 
 export default config;
-

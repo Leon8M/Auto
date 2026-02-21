@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
+import { WhatsAppFloatingButton } from "@/components/WhatsAppFloatingButton"; // Import the new component
 import { GeistSans } from "geist/font/sans";
 
 export default function SiteLayout({
@@ -18,6 +19,7 @@ export default function SiteLayout({
       <Navbar />
       <main className="flex-1">{children}</main>
       <Footer />
+      <WhatsAppFloatingButton /> {/* Add the floating button here */}
     </div>
   );
 }
