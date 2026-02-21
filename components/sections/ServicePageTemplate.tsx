@@ -28,7 +28,7 @@ export function ServicePageTemplate({
   const phoneNumber1 = "0729544809";
 
   return (
-    <section className="relative overflow-hidden py-24 md:py-32 bg-gray-950 text-white">
+    <section className="relative overflow-hidden py-12 md:py-32 bg-gray-950 text-white">
       {/* Background glow/blur effect - matching Hero style */}
       <div className="absolute inset-0 z-0 opacity-30">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
@@ -37,7 +37,22 @@ export function ServicePageTemplate({
       </div>
 
       <div className="container relative z-10">
-        <div className="grid lg:grid-cols-2 place-items-center gap-16 mb-24">
+        <div className="grid lg:grid-cols-2 place-items-center gap-12 lg:gap-16 mb-24">
+          
+          {/* Mobile Visual */}
+          <MotionDiv
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            className="relative lg:hidden flex items-center justify-center h-[200px] w-full"
+          >
+            <div className="absolute inset-0 flex items-center justify-center scale-[0.6]">
+              <div className="w-80 h-80 rounded-full bg-gradient-to-br from-blue-600 to-green-600 opacity-60 animate-pulse-slow"></div>
+              <div className="absolute w-60 h-60 rounded-full bg-gradient-to-tr from-blue-400 to-green-400 opacity-70 animate-pulse-fast"></div>
+              <HeroIcon className="absolute h-40 w-40 text-white opacity-80" />
+            </div>
+          </MotionDiv>
+
           <div className="text-center lg:text-start space-y-8">
             <MotionDiv
               variants={FADE_UP_ANIMATION_VARIANTS}
@@ -81,7 +96,7 @@ export function ServicePageTemplate({
             </div>
           </div>
 
-          {/* Abstract Visual Design - matching Hero exactly */}
+          {/* Desktop Visual */}
           <MotionDiv
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
